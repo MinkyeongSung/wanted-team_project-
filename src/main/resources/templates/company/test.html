@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* 드롭다운 메뉴를 표시하려면 마우스를 버튼 위에 올릴 때 표시되도록 합니다. */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dropdown">
+        <button class="dropbtn" onclick="showDropdown()">분야</button>
+        <div class="dropdown-content" id="dropdownOptions">
+            <!-- 여기에 동적으로 내용이 추가됩니다. -->
+        </div>
+        <div id="inputContainer"></div> <!-- 인풋을 표시할 컨테이너 -->
+    </div>
+    
+    <script src="script.js"></script>
+
+    <script>
+        // 예시 데이터 - {{#bigjobs}}{{/bigjobs}}의 내용
+        var bigJobsData = [
+            { bigName: "분야 1" },
+            { bigName: "분야 2" },
+            { bigName: "분야 3" }
+        ];
+
+        // 동적으로 메뉴 내용을 추가하고 인풋을 생성하는 함수
+        function showDropdown() {
+            var dropdownOptions = document.getElementById("dropdownOptions");
+            var inputContainer = document.getElementById("inputContainer");
+            dropdownOptions.innerHTML = ""; // 메뉴 초기화
+
+            // {{#bigjobs}}{{/bigjobs}}의 내용을 메뉴로 추가
+            bigJobsData.forEach(function (item) {
+                var option = document.createElement("a");
+                option.textContent = item.bigName;
+                option.href = "#";
+
+                // 클릭 이벤트 리스너 추가
+                option.addEventListener("click", function () {
+                    // 선택된 분야에 해당하는 인풋을 생성
+                    var input = document.createElement("input");
+                    input.type = "text";
+                    input.value = item.bigName;
+                    inputContainer.innerHTML = ""; // 컨테이너 초기화
+                    inputContainer.appendChild(input);
+                });
+
+                dropdownOptions.appendChild(option);
+            });
+        }
+
+        // 마우스를 올렸을 때 드롭다운 메뉴 표시
+        var dropbtn = document.querySelector(".dropbtn");
+        dropbtn.addEventListener("mouseenter", showDropdown);
+
+        // 마우스가 드롭다운 메뉴를 벗어났을 때 숨김
+        var dropdown = document.querySelector(".dropdown");
+        dropdown.addEventListener("mouseleave", function () {
+            var dropdownContent = document.querySelector(".dropdown-content");
+            dropdownContent.style.display = "none";
+        });
+    </script>
+</body>
+
+</html>

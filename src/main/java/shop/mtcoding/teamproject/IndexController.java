@@ -21,6 +21,8 @@ import shop.mtcoding.teamproject.reply.Reply;
 import shop.mtcoding.teamproject.smalljob.SmallJobService;
 import shop.mtcoding.teamproject.user.UserRepository;
 
+import shop.mtcoding.teamproject.user.UserRepository;
+
 @Controller
 public class IndexController {
 
@@ -102,10 +104,10 @@ public class IndexController {
 
     // 네브바 (구직자) (오른쪽햄버거)
 
-    @GetMapping("/user/updateForm")
-    public String myseeker() {
-        return "/user/updateForm";
-    }
+    // @GetMapping("/user/updateForm")
+    // public String myseeker() {
+    //     return "/user/updateForm";
+    // }
 
     @GetMapping("/resume/resumeList")
     public String myresume() {

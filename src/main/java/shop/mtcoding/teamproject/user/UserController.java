@@ -4,9 +4,11 @@ import java.io.IOException;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import shop.mtcoding.teamproject.bigjob.BigJob;
 import shop.mtcoding.teamproject.bigjob.BigJobService;
+
+import shop.mtcoding.teamproject.company.Company;
+import shop.mtcoding.teamproject.company.CompanyRequest;
 
 @Controller
 public class UserController {
@@ -54,7 +59,13 @@ public class UserController {
     }
 
     @GetMapping("/userUpdateForm")
-    public String updateForm() {
+    public String updateForm(HttpServletRequest request) {
+        User sessionUser = (User) session.getAttribute("sessionUser");
+        System.out.println("테스트1" + sessionUser.getUserId());
+        User user = userService.회원정보보기(sessionUser.getIndex());
+        request.setAttribute("user", user);
+        System.out.println("테스트2" + user.getUserId());
+
         return "/user/updateForm";
     }
 
@@ -67,10 +78,22 @@ public class UserController {
     @PostMapping("/userLogin")
     public void userLogin(UserRequest.userLoginDTO loginDTO, HttpServletResponse response) throws IOException {
         User sessionUser = userService.userlogin(loginDTO);
-
-        session.setAttribute("sessionUser", sessionUser);
+        if (sessionUser != null) {
+            // 사용자가 입력한 비밀번호와 DB에 저장된 해시화된 비밀번호를 비교
+            boolean isValid = BCrypt.checkpw(loginDTO.getPassword(), sessionUser.getPassword());
+            if (isValid) {
+                // 비밀번호가 일치하는 경우 세션에 저장
+                session.setAttribute("sessionUser", sessionUser);
+                System.out.println("해시 로그인 성공");
+            } else {
+                // 비밀번호가 일치하지 않는 경우 로그인 실패 처리
+                System.out.println("해시 로그인 실패: 비밀번호 불일치");
+            }
+        } else {
+            // 사용자 정보를 찾을 수 없는 경우 로그인 실패 처리
+            System.out.println("해시 로그인 실패: 사용자 정보 없음");
+        }
 
         response.sendRedirect("/");
     }
-
 }

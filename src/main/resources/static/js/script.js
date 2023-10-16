@@ -298,6 +298,7 @@ async function deleteReply(id) {
     }
 }
 
+
 async function saveReply() {
     let requestBody = {
         boardId: document.querySelector("#boardId").value,
@@ -734,8 +735,6 @@ $(document).ready(function () {
         }
     );
 });
-
-
 
 // skill
 $(document).ready(function () {

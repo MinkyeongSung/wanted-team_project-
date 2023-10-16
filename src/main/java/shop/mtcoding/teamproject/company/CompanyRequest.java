@@ -2,6 +2,8 @@ package shop.mtcoding.teamproject.company;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Lob;
+
 import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Getter;
@@ -47,11 +49,12 @@ public class CompanyRequest {
     @Setter
     public static class UpdatedetailDTO {
         private String companyName;
-        private Timestamp establishment;
+        private Integer establishment;
         private String address;
         private String addressDetail;
         private String phoneNum;
         private String email;
         private String homepage;
+        private MultipartFile pic;
     }
 }

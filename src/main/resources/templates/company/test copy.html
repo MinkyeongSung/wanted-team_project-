@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cbtdropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .cbtdropbtn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cbtdropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .cbtdropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dcbtropdown-content a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* 드롭다운 메뉴를 표시하려면 마우스를 버튼 위에 올릴 때 표시되도록 합니다. */
+        .cbtdropdown:hover .cbtdropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cbtdropdown">
+        <button class="cbtdropbtn" onclick="cbtshowDropdown()">분야</button>
+        <input type="text" class="container compinfo_detail_save" id="cbtinputContainer" name=""
+            placeholder="분야를 선택해주세요">
+        <div class="cbtdropdown-content" id="cbtdropdownOptions">
+            {{#bigJobsData}}
+            <a href="#" onclick="setSelectedField('{{bigName}}')">{{bigName}}</a>
+            {{/bigJobsData}}
+        </div>
+    </div>
+
+
+    
+    <script src="script.js"></script>
+
+    <script>
+        // // 예시 데이터 - {{#bigjobs}}{{/bigjobs}}의 내용
+        // var bigJobsData = [
+        //     { bigName: "분야 1" },
+        //     { bigName: "분야 2" },
+        //     { bigName: "분야 3" }
+        // ];
+
+        // // 동적으로 메뉴 내용을 추가하고 인풋을 생성하는 함수
+        // function cbtshowDropdown() {
+        //     var dropdownOptions = document.getElementById("cbtdropdownOptions");
+        //     var inputContainer = document.getElementById("cbtinputContainer");
+        //     dropdownOptions.innerHTML = ""; // 메뉴 초기화
+
+        //     // {{#bigjobs}}{{/bigjobs}}의 내용을 메뉴로 추가
+        //     bigJobsData.forEach(function (item) {
+        //         var option = document.createElement("a");
+        //         option.textContent = item.bigName;
+        //         option.href = "#";
+
+        //         // 클릭 이벤트 리스너 추가
+        //         option.addEventListener("click", function () {
+        //             // 선택된 분야에 해당하는 인풋을 생성
+        //             var input = document.createElement("input");
+        //             input.type = "text";
+        //             input.value = item.bigName;
+        //             inputContainer.innerHTML = ""; // 컨테이너 초기화
+        //             inputContainer.appendChild(input);
+        //         });
+
+        //         dropdownOptions.appendChild(option);
+        //     });
+        // }
+
+        // // 마우스를 올렸을 때 드롭다운 메뉴 표시
+        // var cbtdropbtn = document.querySelector(".cbtdropbtn");
+        // cbtdropbtn.addEventListener("mouseenter", showDropdown);
+
+        // // 마우스가 드롭다운 메뉴를 벗어났을 때 숨김
+        // var cbtdropdown = document.querySelector(".cbtdropdown");
+        // cbtdropdown.addEventListener("mouseleave", function () {
+        //     var dropdownContent = document.querySelector(".cbtdropdown-content");
+        //     dropdownContent.style.display = "none";
+        // });
+
+        var bigJobsData = [
+            { bigName: "분야 1" },
+            { bigName: "분야 2" },
+            { bigName: "분야 3" }
+        ];
+
+        function cbtshowDropdown() {
+            var dropdownOptions = document.getElementById("cbtdropdownOptions");
+            dropdownOptions.style.display = "block";
+        }
+
+        function setSelectedField(selectedField) {
+            var inputContainer = document.getElementById("cbtinputContainer");
+            inputContainer.value = selectedField;
+            var dropdownOptions = document.getElementById("cbtdropdownOptions");
+            dropdownOptions.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

@@ -24,6 +24,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import shop.mtcoding.teamproject._core.error.ex.MyException;
 import shop.mtcoding.teamproject._core.vo.MyPath;
+import shop.mtcoding.teamproject.company.Company;
 import shop.mtcoding.teamproject.user.UserRequest.Kakaologin;
 import shop.mtcoding.teamproject.user.UserRequest.OAuthToken;
 import shop.mtcoding.teamproject.user.UserRequest.userJoinDTO;
@@ -52,8 +53,14 @@ public class UserService {
 
     }
 
+    // public User userlogin(userLoginDTO loginDTO) {
+    // User user = userRepository.findByUserIdAndPassword(loginDTO.getUserId(),
+    // loginDTO.getPassword());
+    // return user;
+    // }
+
     public User userlogin(userLoginDTO loginDTO) {
-        User user = userRepository.findByUserIdAndPassword(loginDTO.getUserId(), loginDTO.getPassword());
+        User user = userRepository.findByUserId(loginDTO.getUserId());
         return user;
     }
 
@@ -137,6 +144,10 @@ public class UserService {
 
             return user2;
         }
+    }
+
+        public User 회원정보보기(Integer index) {
+        return userRepository.findById(index).get();
     }
 
 }

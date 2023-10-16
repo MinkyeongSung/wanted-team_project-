@@ -279,15 +279,15 @@ input {
 }
 
 .joinbtn {
-  padding: 10px 20px;
-  font-size: 16px;
-  width: 28vh;
-  height: 28vh;
-  gap: 30px;
-  background-color: skyblue;
-  border: none;
-  font-size: 30px;
-  font-weight: 800;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 28vh;
+    height: 28vh;
+    gap: 30px;
+    background-color: skyblue;
+    border: none;
+    font-size: 30px;
+    font-weight: 800;
 }
 
 .logincontainer {
@@ -567,12 +567,12 @@ input {
 }
 
 .joinbtn_type {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 45vh;
-  margin-top: 5vh;
-  margin-bottom: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+    margin-top: 5vh;
+    margin-bottom: 25vh;
 }
 
 .logintype {
@@ -939,6 +939,7 @@ input {
     flex-direction: column;
     align-content: center;
     width: 80vh;
+    height: auto;
     margin-bottom: 15px;
     border: 1px solid #ccc;
 
@@ -1066,12 +1067,12 @@ input {
         align-items: center;
     }
 
-  .ann_checkbox {
-    margin: 10px;
-    font-weight: lighter;
-    font-size: 15px;
-    width: 30px;
-  }
+    .ann_checkbox {
+        margin: 10px;
+        font-weight: lighter;
+        font-size: 15px;
+        width: 30px;
+    }
 
     .ann_necessity {
         font-size: small;
@@ -1091,14 +1092,14 @@ input {
         margin-left: 15px;
     }
 
-  .anndetail_title {
-    margin-top: 15px;
-    margin-left: 20px;
-  }
+    .anndetail_title {
+        margin-top: 15px;
+        margin-left: 20px;
+    }
 
-  .ann_radio {
-    margin-left: 10px;
-  }
+    .ann_radio {
+        margin-left: 10px;
+    }
 }
 
 .loginform_control {
@@ -1306,7 +1307,7 @@ input {
 }
 
 .join_guide {
-  text-align: left;
+    text-align: left;
 }
 
 .join_addtwo {
@@ -1453,115 +1454,115 @@ input {
 }
 
 .appsug_formmain {
-  padding-top: 20px;
-  margin: 20px 20px 20px 20px;
-  font-size: small;
-  width: 900px;
+    padding-top: 20px;
+    margin: 20px 20px 20px 20px;
+    font-size: small;
+    width: 900px;
 }
 
 .appsug_main {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .formsection_top {
-  padding-top: 20px;
-  margin: 20px 20px 20px 20px;
-  border-bottom: 1px solid #ccc;
+    padding-top: 20px;
+    margin: 20px 20px 20px 20px;
+    border-bottom: 1px solid #ccc;
 }
 
 /* scrap */
 
 .top_title {
-  font-size: x-large;
-  font-weight: bold;
-  margin-left: 10px;
-  margin-bottom: 15px;
+    font-size: x-large;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 15px;
 }
 
 .scrap_title {
-  display: flex;
-  justify-content: space-between;
-  font-size: large;
-  margin-left: 15px;
-  margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+    margin-left: 15px;
+    margin-top: 10px;
 }
 
 .scrap_workername {
-  margin-top: 10px;
-  margin-left: 15px;
+    margin-top: 10px;
+    margin-left: 15px;
 }
 
 .ann_mainimg {
-  display: block;
-  width: 65vh;
-  margin-top: 30px;
+    display: block;
+    width: 65vh;
+    margin-top: 30px;
 }
 
 .serach_fourcad {
-  display: flex;
-  width: 90vh;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    display: flex;
+    width: 90vh;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .search_listform {
-  display: grid;
-  justify-content: center;
-  align-items: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
 .search_sideform {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .search_sidetitle {
-  margin-left: 30px;
-  margin-top: 20px;
+    margin-left: 30px;
+    margin-top: 20px;
 }
 
 .search_sidebar {
-  display: flex;
-  width: 110vh;
-  height: 140px;
-  margin-right: 5px;
-  overflow-y: auto;
+    display: flex;
+    width: 110vh;
+    height: 140px;
+    margin-right: 5px;
+    overflow-y: auto;
 }
 
 .search_sidebar2 {
-  display: flex;
-  position: fixed;
-  width: 110vh;
-  height: 140px;
-  margin-right: 5px;
-  overflow-y: auto;
-  z-index: 1;
-  background: white;
+    display: flex;
+    position: fixed;
+    width: 110vh;
+    height: 140px;
+    margin-right: 5px;
+    overflow-y: auto;
+    z-index: 1;
+    background: white;
 }
 
 .search_dropdown {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 25px;
 }
 
 .search_dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .search_dropdown:hover .search_dropdown-content {
-  display: block;
+    display: block;
 }
 
 .search_dropdown-content a {
-  padding: 12px 16px;
-  display: block;
+    padding: 12px 16px;
+    display: block;
 }
 
 
@@ -1719,7 +1720,7 @@ input {
     width: 300px;
 }
 
-.compdetail_savebtn{
+.compdetail_savebtn {
     padding: 5px 10px;
     width: 140px;
     margin-right: 10px;
@@ -1732,8 +1733,55 @@ input {
     margin-right: 20px;
 }
 
-.anndetail_how{
+.anndetail_how {
     margin: 10px;
     display: flex;
     justify-content: center;
+}
+
+
+.compBigType {
+    position: relative;
+    display: inline-block;
+
+
+    .cbtdropbtn {
+        background-color: #3498db;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .cbtdropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .cbtdropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .cbtdropdown-content a:hover {
+        background-color: #3498db;
+        color: white;
+    }
+
+    /* 드롭다운 메뉴를 표시하려면 마우스를 버튼 위에 올릴 때 표시되도록 합니다. */
+    .cbtdropdown:hover .cbtdropdown-content {
+        display: block;
+    }
+
+    .cbtnecessity {
+        font-size: small;
+        color: #ccc;
+        margin: 5px;
+    }
 }
